@@ -1,0 +1,159 @@
+Jun-18 11:32:52.097 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --input_matrix data/tiny_matrix.h5ad --outdir local_results -profile standard
+Jun-18 11:32:52.340 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.4
+Jun-18 11:32:52.403 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.0,nf-tower@1.28.1,nf-wave@1.21.0
+Jun-18 11:32:52.477 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-18 11:32:52.479 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-18 11:32:52.484 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Jun-18 11:32:52.534 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Jun-18 11:32:53.003 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Jun-18 11:32:53.018 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-18 11:32:53.102 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/ubuntu/scrna-spatial-pipeline/nextflow.config
+Jun-18 11:32:53.110 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/scrna-spatial-pipeline/nextflow.config
+Jun-18 11:32:53.116 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Jun-18 11:32:53.165 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jun-18 11:32:54.063 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-amazon@3.9.2]
+Jun-18 11:32:54.066 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jun-18 11:32:54.067 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-amazon@3.9.2]
+Jun-18 11:32:54.074 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 3.9.2
+Jun-18 11:32:54.107 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@3.9.2' resolved
+Jun-18 11:32:54.108 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@3.9.2'
+Jun-18 11:32:54.330 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@3.9.2
+Jun-18 11:32:54.381 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Jun-18 11:32:54.439 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Jun-18 11:32:54.445 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@37045b48] - activable => nextflow.secret.LocalSecretsProvider@37045b48
+Jun-18 11:32:54.485 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [gloomy_coulomb] - revision: 53235839c8
+Jun-18 11:32:54.727 [main] DEBUG nextflow.Session - Session UUID: 202cbb15-56cb-40df-a2d2-1dc5de95e18a
+Jun-18 11:32:54.728 [main] DEBUG nextflow.Session - Run name: gloomy_coulomb
+Jun-18 11:32:54.729 [main] DEBUG nextflow.Session - Executor pool size: 2
+Jun-18 11:32:54.746 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jun-18 11:32:54.760 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jun-18 11:32:54.833 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.4 build 12445
+  Created: 17-06-2026 16:30 UTC 
+  System: Linux 7.0.0-1006-aws
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 25.0.3+9-2-26.04.2-Ubuntu
+  Encoding: UTF-8 (UTF-8)
+  Process: 23376@ip-172-31-47-211 [172.31.47.211]
+  CPUs: 2 - Mem: 908.7 MB (53.1 MB) - Swap: 0 (0)
+Jun-18 11:32:54.882 [main] DEBUG nextflow.Session - Work-dir: /home/ubuntu/scrna-spatial-pipeline/work [ext2/ext3]
+Jun-18 11:32:54.884 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/scrna-spatial-pipeline/bin
+Jun-18 11:32:54.964 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[AwsBatchExecutor]
+Jun-18 11:32:54.995 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Jun-18 11:32:55.001 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Jun-18 11:32:55.070 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-18 11:32:55.091 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 3; maxThreads: 1000
+Jun-18 11:32:55.235 [main] DEBUG nextflow.Session - Session start
+Jun-18 11:32:55.244 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Jun-18 11:32:55.753 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-18 11:32:56.088 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-18 11:32:56.089 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-18 11:32:56.105 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-18 11:32:56.129 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=2; memory=908.7 MB; capacity=2; pollInterval=100ms; dumpInterval=5m
+Jun-18 11:32:56.135 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-18 11:32:56.216 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SEURAT_CELL_QC': maxForks=0; fair=false; array=0
+Jun-18 11:32:56.332 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-18 11:32:56.332 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-18 11:32:56.334 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SEURAT_CELL_CLUSTERING': maxForks=0; fair=false; array=0
+Jun-18 11:32:56.338 [main] DEBUG nextflow.Session - Process names: SEURAT_CELL_QC, SEURAT_CELL_CLUSTERING
+Jun-18 11:32:56.342 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+Jun-18 11:32:56.355 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SEURAT_CELL_QC
+Jun-18 11:32:56.364 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SEURAT_CELL_CLUSTERING
+Jun-18 11:32:56.370 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Main: /home/ubuntu/scrna-spatial-pipeline/main.nf
+Jun-18 11:32:56.378 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jun-18 11:32:56.378 [main] DEBUG nextflow.Session - Session await
+Jun-18 11:32:56.965 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-18 11:32:56.971 [Task submitter] INFO  nextflow.Session - [a7/864ea0] Submitted process > SEURAT_CELL_QC (1)
+Jun-18 11:33:04.756 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: SEURAT_CELL_QC (1); status: COMPLETED; exit: 1; error: -; workDir: /home/ubuntu/scrna-spatial-pipeline/work/a7/864ea011e6058d284411601bb91071]
+Jun-18 11:33:04.760 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=10; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jun-18 11:33:04.789 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=SEURAT_CELL_QC (1); work-dir=/home/ubuntu/scrna-spatial-pipeline/work/a7/864ea011e6058d284411601bb91071
+  error [nextflow.exception.ProcessFailedException]: Process `SEURAT_CELL_QC (1)` terminated with an error exit status (1)
+Jun-18 11:33:04.835 [TaskFinalizer-1] ERROR nextflow.processor.TaskProcessor - Error executing process > 'SEURAT_CELL_QC (1)'
+
+Caused by:
+  Process `SEURAT_CELL_QC (1)` terminated with an error exit status (1)
+
+
+Command executed:
+
+  Rscript -e "
+  library(Seurat)
+  print('Executing Single-Cell Quality Control...')
+  
+  # Simulating data ingestion and high-pass mitochondrial filtering
+  mock_pbmc <- list(dataset='PBMC_100_Cells', cells_retained=95, status='QC Passed')
+  
+  saveRDS(mock_pbmc, file='pbmc_qc_filtered.rds')
+  print('Low-quality cells and doublets filtered successfully!')
+  "
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  Loading required package: SeuratObject
+  Loading required package: sp
+  
+  Attaching package: ‘SeuratObject’
+  
+  The following objects are masked from ‘package:base’:
+  
+      intersect, t
+  
+  Error: package or namespace load failed for ‘Seurat’ in dyn.load(file, DLLpath = DLLpath, ...):
+   unable to load shared object '/usr/local/lib/R/site-library/igraph/libs/igraph.so':
+    libglpk.so.40: cannot open shared object file: No such file or directory
+  Execution halted
+
+Work dir:
+  /home/ubuntu/scrna-spatial-pipeline/work/a7/864ea011e6058d284411601bb91071
+
+Container:
+  seurat-spatial:latest
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Jun-18 11:33:04.865 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jun-18 11:33:04.868 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jun-18 11:33:04.869 [TaskFinalizer-1] DEBUG nextflow.Session - Session aborted -- Cause: Process `SEURAT_CELL_QC (1)` terminated with an error exit status (1)
+Jun-18 11:33:04.870 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-18 11:33:04.938 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=7.7s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jun-18 11:33:04.946 [TaskFinalizer-1] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=7.7s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jun-18 11:33:04.947 [TaskFinalizer-1] DEBUG nextflow.Session - null
+java.lang.InterruptedException
+	at java.base/java.lang.Object.wait0(Native Method)
+	at java.base/java.lang.Object.wait(Object.java:389)
+	at java.base/java.lang.Thread.join(Thread.java:1887)
+	at java.base/java.lang.Thread.join(Thread.java:1963)
+	at nextflow.trace.AnsiLogObserver.onFlowComplete(AnsiLogObserver.groovy:559)
+	at nextflow.Session$_notifyFlowComplete_lambda38.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1123)
+	at nextflow.Session.notifyFlowComplete(Session.groovy:1093)
+	at nextflow.Session.shutdown0(Session.groovy:775)
+	at nextflow.Session.abort(Session.groovy:830)
+	at nextflow.Session.fault(Session.groovy:792)
+	at nextflow.processor.TaskPollingMonitor.finalizeTask(TaskPollingMonitor.groovy:753)
+	at nextflow.processor.TaskPollingMonitor.safeFinalizeTask(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_checkTaskStatus_lambda8.doCall(TaskPollingMonitor.groovy:726)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Jun-18 11:33:05.164 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jun-18 11:33:05.185 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-amazon@3.9.2'
+Jun-18 11:33:05.186 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-amazon
+Jun-18 11:33:05.188 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

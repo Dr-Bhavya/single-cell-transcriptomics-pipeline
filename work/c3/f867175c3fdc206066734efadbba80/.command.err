@@ -1,0 +1,6 @@
+Loading required package: SeuratObject
+Loading required package: sp
+Error: package or namespace load failed for ‘SeuratObject’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ namespace ‘Matrix’ 1.5-4 is being loaded, but >= 1.6.4 is required
+Error: package ‘SeuratObject’ could not be loaded
+Execution halted

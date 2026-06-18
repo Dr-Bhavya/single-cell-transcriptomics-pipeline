@@ -1,0 +1,19 @@
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+/home/ubuntu/scrna-spatial-pipeline/work/39/63b5850e4ce5f52c8c445ee3c67d80/.command.sh: line 11:     7 Killed                  Rscript -e "
+library(Seurat)
+print('Executing Single-Cell Quality Control...')
+
+# Simulating data ingestion and high-pass mitochondrial filtering
+mock_pbmc <- list(dataset='PBMC_100_Cells', cells_retained=95, status='QC Passed')
+
+saveRDS(mock_pbmc, file='pbmc_qc_filtered.rds')
+print('Low-quality cells and doublets filtered successfully!')
+"

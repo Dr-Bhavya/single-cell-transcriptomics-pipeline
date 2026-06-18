@@ -1,0 +1,26 @@
+name: Single-Cell Cloud Pipeline CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Install Nextflow
+      run: |
+        wget -qO- https://nextflow.io | bash
+        sudo mv nextflow /usr/local/bin/
+
+    - name: Build Seurat Container
+      run: docker build -t seurat-spatial:latest ./docker/seurat
+
+    - name: Run Single-Cell Data Generator
+      run: docker build -t scanpy-spatial:latest ./docker/scanpy && docker run -v $(pwd):/pipeline scanpy-spatial:latest python3 make_test_data.py
+
+    - name: Execute Nextflow Pipeline
+      run: nextflow run main.nf --input_matrix data/tiny_matrix.h5ad --outdir local_results -profile standard
