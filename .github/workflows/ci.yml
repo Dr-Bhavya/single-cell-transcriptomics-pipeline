@@ -11,6 +11,13 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-south-1
+
     - name: Install Nextflow
       run: |
         wget -qO- https://get.nextflow.io | bash
@@ -22,17 +29,14 @@ jobs:
     - name: Run Single-Cell Data Generator
       run: docker build -t scanpy-spatial:latest ./docker/scanpy && docker run -v $(pwd):/pipeline scanpy-spatial:latest python3 make_test_data.py
 
-    - name: Execute Nextflow Pipeline
-      run: nextflow run main.nf --input_matrix data/tiny_matrix.h5ad --outdir local_results -profile standard
+    - name: Execute Nextflow Pipeline Local Output
+      run: nextflow run main.nf --input_matrix data/tiny_matrix.h5ad --outdir local_results/ -profile standard
 
     - name: Save Pipeline Results to GitHub
       uses: actions/upload-artifact@v4
       with:
         name: single-cell-analysis-report
         path: local_results/
-    - name: Execute Nextflow Pipeline to AWS S3
-      run: |
-        nextflow run main.nf \
-          --input_matrix data/tiny_matrix.h5ad \
-          --outdir s3://seurat-spatial-bhavya/results/single-cell/ \
-          -profile standard
+
+    - name: Direct Secure Upload to AWS S3 Bucket
+      run: aws s3 sync local_results/ s3://seurat-spatial-bhavya/results/single-cell/
