@@ -20,7 +20,7 @@ process SEURAT_MODULAR_ANALYSIS {
 
     script:
     """
-    Rscript ${r_script}
+    Rscript $\r_script
     """
 }
 
